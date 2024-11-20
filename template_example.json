@@ -1,0 +1,25 @@
+{
+  "startNodes": [
+    {
+      "nodeCount": 1,
+      "relationships": [{ "edge": "has_state", "endNode": "state" }],
+      "nodeProperties": {
+        "label": "country",
+        "country": "country",
+        "created_at": "date",
+        "updated_at": "date"
+      }
+    }
+  ],
+  "endNodes": [
+    {
+      "nodeCount": 1,
+      "connection": [],
+      "nodeProperties": {
+        "label": "state",
+        "state": "state",
+        "created_at": "date"
+      }
+    }
+  ]
+}
