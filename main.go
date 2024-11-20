@@ -6,8 +6,8 @@ import (
 	"log"
 	"strings"
 
-	"satoru-itadori/go-graph-seeder/config"
-	"satoru-itadori/go-graph-seeder/gremlin"
+	"phanorcoll/go-graph-seeder/config"
+	"phanorcoll/go-graph-seeder/gremlin"
 )
 
 func main() {

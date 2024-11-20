@@ -1,4 +1,4 @@
-module satoru-itadori/go-graph-seeder
+module phanorcoll/go-graph-seeder
 
 go 1.22.3
 

@@ -4,10 +4,10 @@ package gremlin
 import (
 	"fmt"
 	"log"
-	"satoru-itadori/go-graph-seeder/generator"
+	"phanorcoll/go-graph-seeder/generator"
 	"sync"
 
-	"satoru-itadori/go-graph-seeder/config"
+	"phanorcoll/go-graph-seeder/config"
 
 	gremlingo "github.com/apache/tinkerpop/gremlin-go/v3/driver"
 )
