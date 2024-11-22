@@ -6,6 +6,7 @@
       "nodeProperties": {
         "label": "country",
         "country": "country",
+        "selected": {"type":"enum", "values":[{"value":"yes", "weight": 1}, {"value":"no", weight: 0.5]},
         "created_at": "date",
         "updated_at": "date"
       }
