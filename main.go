@@ -33,7 +33,10 @@ func main() {
 		if err != nil {
 			log.Fatalf("Failed to create start nodes: %v", err)
 		}
-		label := startNode.NodeProperties["label"]
+		label, ok := startNode.NodeProperties["label"].(string)
+		if !ok {
+			log.Fatalf("Failed to read label property as string")
+		}
 		results[label] += startNode.NodeCount
 		createdNodes[label] = append(createdNodes[label], nodeIDs...)
 	}
@@ -44,14 +47,20 @@ func main() {
 		if err != nil {
 			log.Fatalf("Failed to create end nodes: %v", err)
 		}
-		label := endNode.NodeProperties["label"]
+		label, ok := endNode.NodeProperties["label"].(string)
+		if !ok {
+			log.Fatalf("Failed to read label property as string")
+		}
 		results[label] += endNode.NodeCount
 		createdNodes[label] = append(createdNodes[label], nodeIDs...)
 	}
 
 	// Create relationships
 	for _, startNode := range template.StartNodes {
-		startLabel := startNode.NodeProperties["label"]
+		startLabel, ok := startNode.NodeProperties["label"].(string)
+		if !ok {
+			log.Fatalf("Failed to read start node label property as string")
+		}
 		for _, relationship := range startNode.Relationships {
 			endLabel := relationship.EndNode
 			edgeLabel := relationship.Edge

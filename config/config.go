@@ -14,9 +14,9 @@ type Relationship struct {
 
 // NodeTemplate struct  
 type NodeTemplate struct {
-	NodeCount      int               `json:"nodeCount"`
-	Relationships  []Relationship    `json:"relationships"`
-	NodeProperties map[string]string `json:"nodeProperties"`
+	NodeCount      int                    `json:"nodeCount"`
+	Relationships  []Relationship         `json:"relationships,omitempty"`
+	NodeProperties map[string]interface{} `json:"nodeProperties"`
 }
 
 // Template struct  
