@@ -70,6 +70,8 @@ func GenerateNodes(properties map[string]string, start, end int) []map[string]in
 		for key, propType := range properties {
 			if key == "label" {
 				node["label"] = propType
+			} else if key == "account_type" {
+				node[key] = propType
 			} else {
 				node[key] = GenerateValue(propType)
 			}
@@ -79,7 +81,7 @@ func GenerateNodes(properties map[string]string, start, end int) []map[string]in
 	return nodes
 }
 
-// generatePersistentIDs generates a set of identifiers including email, name combination, and a UUID.
+// GeneratePersistentIDs generates a set of identifiers including email, name combination, and a UUID.
 func GeneratePersistentIDs(email, firstName, lastName string) []interface{} {
 	persistentIDs := []interface{}{
 		email, // Add the email
