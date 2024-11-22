@@ -102,6 +102,79 @@ A **state** node with properties **state_name** and **created_at** will be creat
 - Source Node: "**country**"
 - Target Node: "**state**"
 
+# Supported Property Types
+
+| **Property Type**        | **Description**                                                                                       | **Example Output**                      |
+|---------------------------|-------------------------------------------------------------------------------------------------------|------------------------------------------|
+| `email`                  | Generates a random email address.                                                                    | `john.doe@example.com`                  |
+| `fname`                  | Generates a random first name.                                                                       | `John`                                  |
+| `lname`                  | Generates a random last name.                                                                        | `Doe`                                   |
+| `address`                | Generates a random street address.                                                                   | `123 Elm St`                            |
+| `city`                   | Generates a random city name.                                                                        | `Springfield`                           |
+| `state`                  | Generates a random U.S. state name.                                                                  | `California`                            |
+| `country`                | Generates a random country name.                                                                     | `United States`                         |
+| `postal`                 | Generates a random postal code.                                                                      | `90210`                                 |
+| `phone`                  | Generates a random phone number.                                                                     | `(555) 123-4567`                        |
+| `job`                    | Generates a random job title.                                                                        | `Software Engineer`                     |
+| `language`               | Generates a random language name.                                                                   | `English`                               |
+| `date`                   | Generates a random date in the format `YYYY-MM-DDTHH:MM:SSZ`.                                       | `2024-11-22T14:53:00Z`                  |
+| `timestamp`              | Generates the current UNIX timestamp.                                                               | `1700658753`                            |
+| `size`                   | Generates a random numerical size between 1 and 1000.                                               | `523`                                   |
+| `enum`                   | Selects a value from a predefined set of weighted options.                                           | Based on input values (see below).      |
+
+**enum** Property Type
+
+The **enum** type allows generating values from a predefined set, where each value has a weight determining its likelihood of being selected.
+Input example
+```json
+{
+  "type": "enum",
+  "values": [
+    { "value": "option1", "weight": 0.2 },
+    { "value": "option2", "weight": 0.5 },
+    { "value": "option3", "weight": 1 }
+  ]
+}
+```
+Behavior:
+
+Values with higher weights are more likely to be selected.
+- Example outputs:
+  - **option3** appears most frequently.
+  - **option1** appears least frequently.
+ 
+### Sample template.json configuration
+If a property is created with a undefined **propType** it will default to a random word. See example below, the **music_type** property.
+
+```json
+{
+  "nodeProperties": {
+    "label": "person",
+    "email": "email",
+    "first_name": "fname",
+    "last_name": "lname",
+    "music_type: "loren ipsum",
+    "ccategory": {
+      "type": "enum",
+      "values": [
+        { "value": "category1", "weight": 0.3 },
+        { "value": "category2", "weight": 0.7 }
+      ]
+    }
+  }
+}
+```
+Generated output
+```json
+{
+  "label": "person",
+  "email": "jane.doe@example.com",
+  "first_name": "Jane",
+  "last_name": "Doe",
+  "music_type": "random word",
+  "category": "category2"
+}
+```
 ### Run it!
 Once the template.json is all set up **run**
 ```bash
