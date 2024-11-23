@@ -38,6 +38,8 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
+    files:
+      - template_example.json
 
 changelog:
   sort: asc
