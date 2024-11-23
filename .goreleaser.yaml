@@ -8,7 +8,7 @@ version: 2
 release:
   github:
     owner: phanorcoll
-    name: GoSeeder
+    name: goseeder
 
 before:
   hooks:
