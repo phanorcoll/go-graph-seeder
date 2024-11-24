@@ -1,0 +1,8 @@
+services:
+  neptune-emulator:
+    image: local/neptune-emulator
+    build:
+      context: ./neptune-emulator # Use the custom build context
+    container_name: neptune-emulator
+    ports:
+      - 8182:8182
