@@ -1,7 +1,16 @@
 # Go Graph Seeder
 <img src="https://github.com/user-attachments/assets/b240a681-97c9-4979-b222-e3eaa8807a57" alt="go graph seeder" width="500" height="500">
 
-### Requirements
+Welcome to Go Graph Seeder! This handy application is designed to help you easily create and manage nodes and edges in a Gremlin-based graph database. Whether you’re a developer, data scientist, or just someone curious about graph databases, this tool is here to make your life easier!
+### Why Choose Go Graph Seeder?
+- **Connect with Ease**: The application connects seamlessly to a Gremlin server running at localhost:8182. Just fire it up, and you’re ready to go!
+- **Customize Your Nodes**: With our JSON configuration file, you have the power to define both startNodes and endNodes. You can specify their properties, how many of each you want, and even how they relate to one another.
+- **Diverse Property Types**: Need random data? No problem! Go Graph Seeder supports various property types like emails, names, addresses, and more. You can create realistic data in no time.
+- **Fun with Enums**: Want to add some randomness? Use the enum property type to generate values from a set of options with weighted probabilities. It’s a great way to add variety!
+
+![go_seeder_demo](https://github.com/user-attachments/assets/f01a6372-bc7e-46ba-80d9-95d1e1273510)
+
+### Requirements to run the source code
 - Go version >= 1.22.3
 
 ### Initial configuration
@@ -179,4 +188,16 @@ Generated output
 Once the template.json is all set up **run**
 ```bash
 go run main.go
+
+#got the binary
+#the file template.json has to be in the same directory as the binary.
+./go-graph-seeder
+
 ```
+
+## TODO
+
+- [ ] Make the host dynamic
+- [ ] Make the port dynamic
+- [ ] Make the file name & location dynamic
+- [ ] Handle multiple levels of edges, right now it handles 1 level (ex. a -> b )
