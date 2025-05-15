@@ -55,11 +55,11 @@ The **startNodes** array defines the primary nodes that will be created in the g
    - Each relationship specifies:
      - **edge**: The label of the edge (e.g., "**has_state**").
      - **endNode**: The label of the target node to connect to (e.g., "**state**").
-     
+
 - **nodeProperties**:
   - Contains the properties for each node. Each property is defined as a key-value pair where the key is the property name, and the value specifies the type of data (e.g., "**country**", "**date**").
   - **label**: Specifies the type of the node (e.g., "**country**").
-    
+
   - **example**
 ```json
 {
@@ -79,7 +79,7 @@ The **endNodes** array defines secondary nodes that act as targets for relations
 - nodeProperties:
   - Contains the properties for each node, defined similarly to **startNodes**.
 - **label**: Specifies the type of the node (e.g., "**state**").
-- 
+-
 example
 ```json
 {
@@ -151,7 +151,7 @@ Values with higher weights are more likely to be selected.
 - Example outputs:
   - **option3** appears most frequently.
   - **option1** appears least frequently.
- 
+
 ### Sample template.json configuration
 If a property is created with a undefined **propType** it will default to a random word. See example below, the **music_type** property.
 

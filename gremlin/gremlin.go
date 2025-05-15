@@ -10,6 +10,7 @@ import (
 	"phanorcoll/go-graph-seeder/config"
 
 	gremlingo "github.com/apache/tinkerpop/gremlin-go/v3/driver"
+	"github.com/google/uuid"
 )
 
 // NewConnection creates a new connection to the Gremlin server.
@@ -82,7 +83,7 @@ func AddNodesToGraph(
 	var nodeIDs []interface{}
 	for _, node := range nodes {
 		label := node["label"].(string)
-		traversal := g.AddV(label)
+		traversal := g.AddV(label).Property("id", uuid.New().String())
 
 		for key, value := range node {
 			if key != "label" {
